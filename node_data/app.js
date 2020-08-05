@@ -37,6 +37,7 @@ app.post("/user/login", (request, response) => {
      pathname: "userlist",//菜单路径名称，暂时没用
      componentPath: "user/UserManger",//对应组件的路径
      menuImgClass: 'TeamOutlined',//菜单对应的class名称,主要用于设置菜单的ICON
+     pId: //父级菜单的menuId, 没有父级时，值设置为0
      menuState: "0",//菜单的状态，0 有效，1无效
      isContainChildren:false,//是否包含子组件中
      menuChilds: []	//子菜单列表，必须是数组类型
