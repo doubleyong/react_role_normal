@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React 权限管理
+使用create_react_app框架，antd UI 使用axios请求数据，mobx存储数据.实现路由、菜单的动态生成，及面包屑的动态生成
 
-## Available Scripts
+node_data:使用Nodejs 搭建的一个服务器，主要给react项目给数据的。只写了登录接口，有跨域处理
 
-In the project directory, you can run:
+如有疑问，可以到bug收集上提问，网址：bugshouji.com
 
-### `yarn start`
+架构与环境搭建
+安装create-react-app
+1.Npm install create-react-app –g 全局安装
+2.通过create-react-app命令 创建项目
+3.Npm start 运行项目启动
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+配置mobx
+参考：https://blog.csdn.net/yanwu9537/article/details/93224463
+1. create-react-app myreact
+2. cd myreact
+3. npm run eject 解压配置
+4. 安装mobx mobx-react
+mobx 是状态管理工具
+mobx-react 是做数据分片和数据获取
+注意： 如果git冲突
+解决： 我们要原文件先放到本地暂存盘
+git add .
+git commit -m ’
+​ 然后 ： 安装mobx mobx-react’
+​ 注意不要git push
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+5. 配置装饰器（ 修饰器 es6 ） babel
+yarn add babel-plugin-transform-decorators-legacy -D
+yarn add @babel/preset-env -D
+yarn add babel-plugin-transform-class-properties -D
+yarn add @babel/plugin-proposal-decorators -D
 
-### `yarn test`
+npm install babel-plugin-transform-decorators-legacy -D,
+@babel/preset-env -D,
+babel-plugin-transform-class-properties -D,
+@babel/plugin-proposal-decorators -D
+6.配置package.json
+"babel": {
+	    "plugins": [
+	      [
+	        "@babel/plugin-proposal-decorators",
+	        {
+	          "legacy": true
+	        }
+	      ],
+      "transform-class-properties"
+    ],
+    "presets": [
+      "react-app",
+      "@babel/preset-env"
+    ]
+    },
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  注意： 以下两个配置顺序不可更改
+     [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ],
+      "transform-class-properties"
