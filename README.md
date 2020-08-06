@@ -1,18 +1,26 @@
 React 权限管理
+
 使用create_react_app框架，antd UI 使用axios请求数据，mobx存储数据.实现路由、菜单的动态生成，及面包屑的动态生成
 
 node_data:使用Nodejs 搭建的一个服务器，主要给react项目给数据的。只写了登录接口，有跨域处理
 
-如有疑问，可以到bug收集上提问，网址：bugshouji.com
+如有疑问，可以到bug收集上提问，网址：bugshouji.com  或者QQ群：807442749 或bug收集公众号
 
 架构与环境搭建
+
 安装create-react-app
+
 1.Npm install create-react-app –g 全局安装
+
 2.通过create-react-app命令 创建项目
+
 3.Npm start 运行项目启动
 
+
 配置mobx
+
 参考：https://blog.csdn.net/yanwu9537/article/details/93224463
+
 1. create-react-app myreact
 2. cd myreact
 3. npm run eject 解压配置
