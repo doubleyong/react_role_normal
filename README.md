@@ -35,15 +35,17 @@ git commit -m ’
 ​ 注意不要git push
 
 5. 配置装饰器（ 修饰器 es6 ） babel
+
 yarn add babel-plugin-transform-decorators-legacy -D
+
 yarn add @babel/preset-env -D
+
 yarn add babel-plugin-transform-class-properties -D
+
 yarn add @babel/plugin-proposal-decorators -D
 
-npm install babel-plugin-transform-decorators-legacy -D,
-@babel/preset-env -D,
-babel-plugin-transform-class-properties -D,
-@babel/plugin-proposal-decorators -D
+
+
 6.配置package.json
 "babel": {
 	    "plugins": [
